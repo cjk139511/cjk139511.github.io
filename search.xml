@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>python中字典的相关操作</title>
+      <link href="/2019/11/20/python%E5%85%A5%E9%97%A8/"/>
+      <url>/2019/11/20/python%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<p>一:什么是字典？<br>next是Hexo的一个博客主题，这个主题 ，首页显示的文章列表，每一遍都是全文，不方便概览。<br>希望达到的效果<br>首页显示文章列表，列表里的每一篇文章只显示预览，不显示全文。<br>解决方法</p><a id="more"></a><p>百度了好久，折腾了半天，改了各种参数，算是撞破了头，最后试出来了。<br>哎，搞移动端的，不太懂网页的这些东西，不说废话了，直接上解决方法：</p><p>进入hexo博客项目的themes/next目录<br>用文本编辑器打开_config.yml文件<br>搜索”auto_excerpt”,找到如下部分：</p><p>作者：CGPointZero<br>链接：<a href="https://www.jianshu.com/p/393d067dba8d" target="_blank" rel="noopener">https://www.jianshu.com/p/393d067dba8d</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
