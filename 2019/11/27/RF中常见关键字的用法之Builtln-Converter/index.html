@@ -101,15 +101,15 @@
 
 
 
-<meta name="description" content="本文阅读说明: 1.代码调试工具为VScode，python版本为python3，robot framework版本为3.1.1，如有涉及到3.1.1版本之后的内容会特别声明备注。 2.由于RF框架中Builtln-Verify中很多关键字的使用方法一样，只要了解一个的使用方法就能了解类似其他的，例如：should_be_true&#x2F;should_not_be_true，should_be_equa">
+<meta name="description" content="说明:本文主要涉及到Builtln模块中的Converter转换操作，例如convert_to_integer，convert_to_binary等等，但是我主要是想讲解其中常用的2个关键字，分别是create_list与create_dictionary，对于其他的转换请大家自己阅读源码以及官方文档。 (1).create_list(self, *items) 定义:返回包含给定items的列表">
 <meta name="keywords" content="robot framework">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RF中常见关键字的用法之Builtln-Verify">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.cpmuyi.com&#x2F;2019&#x2F;11&#x2F;26&#x2F;RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify&#x2F;index.html">
+<meta property="og:title" content="RF中常见关键字的用法之Builtln-Converter">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.cpmuyi.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter&#x2F;index.html">
 <meta property="og:site_name" content="chenjunkan Blog">
-<meta property="og:description" content="本文阅读说明: 1.代码调试工具为VScode，python版本为python3，robot framework版本为3.1.1，如有涉及到3.1.1版本之后的内容会特别声明备注。 2.由于RF框架中Builtln-Verify中很多关键字的使用方法一样，只要了解一个的使用方法就能了解类似其他的，例如：should_be_true&#x2F;should_not_be_true，should_be_equa">
+<meta property="og:description" content="说明:本文主要涉及到Builtln模块中的Converter转换操作，例如convert_to_integer，convert_to_binary等等，但是我主要是想讲解其中常用的2个关键字，分别是create_list与create_dictionary，对于其他的转换请大家自己阅读源码以及官方文档。 (1).create_list(self, *items) 定义:返回包含给定items的列表">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-27T14:29:51.624Z">
+<meta property="og:updated_time" content="2019-11-30T09:20:17.495Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="https://www.cpmuyi.com/2019/11/26/RF中常见关键字的用法之Builtln-Verify/"/>
+  <link rel="canonical" href="https://www.cpmuyi.com/2019/11/27/RF中常见关键字的用法之Builtln-Converter/"/>
 
 
 
@@ -156,7 +156,7 @@
   </script>
 
 
-  <title>RF中常见关键字的用法之Builtln-Verify | chenjunkan Blog</title>
+  <title>RF中常见关键字的用法之Builtln-Converter | chenjunkan Blog</title>
   
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.cpmuyi.com/2019/11/26/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify/">
+    <link itemprop="mainEntityOfPage" href="https://www.cpmuyi.com/2019/11/27/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenjunkan">
@@ -344,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RF中常见关键字的用法之Builtln-Verify</h1>
+          <h1 class="post-title" itemprop="name headline">RF中常见关键字的用法之Builtln-Converter</h1>
         
 
         <div class="post-meta">
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-26T11:21:39+08:00">
-                2019-11-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-27T23:16:12+08:00">
+                2019-11-27
               </time>
             
 
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-27T22:29:51+08:00">
-                2019-11-27
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-30T17:20:17+08:00">
+                2019-11-30
               </time>
             
           </span>
@@ -408,7 +408,7 @@
 
           
           
-             <span id="/2019/11/26/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify/" class="leancloud_visitors" data-flag-title="RF中常见关键字的用法之Builtln-Verify">
+             <span id="/2019/11/27/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter/" class="leancloud_visitors" data-flag-title="RF中常见关键字的用法之Builtln-Converter">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  2.2k
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  8
                 </span>
               
             </div>
@@ -471,71 +471,41 @@
       
 
       
-        <p>本文阅读说明:</p>
-<p>1.代码调试工具为VScode，python版本为python3，robot framework版本为3.1.1，如有涉及到3.1.1版本之后的内容会特别声明备注。</p>
-<p>2.由于RF框架中Builtln-Verify中很多关键字的使用方法一样，只要了解一个的使用方法就能了解类似其他的，例如：should_be_true/should_not_be_true，should_be_equal/should_not_be_equal，等等，因此由于篇幅有限，只说明其中部分常用的关键字。</p>
-<p>(1).should_be_true(self, condition, msg=None)</p>
-<p>定义:如果给定条件(condition)不成立,则失败。</p>
-<p>condition:给定判断的条件</p>
-<p>msg:校验失败之后的消息打印，默认为None</p>
-<p>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># 单个条件比较大小校验-pass</span><br><span class="line">$&#123;rc&#125;                  Set Variable         $&#123;5&#125;</span><br><span class="line">Should Be True         $&#123;rc&#125; &lt; 10</span><br><span class="line"></span><br><span class="line"># 单个条件比较大小校验-fail</span><br><span class="line">$&#123;rc&#125;                  Set Variable         $&#123;11&#125;</span><br><span class="line">Should Be True         $&#123;rc&#125; &lt; 10</span><br><span class="line"># 打印结果:FAIL : &apos;11 &lt; 10&apos; should be true.</span><br><span class="line"></span><br><span class="line"># 单个条件相等校验-pass</span><br><span class="line">$&#123;status&#125;              Set Variable                  PASS</span><br><span class="line">Should Be True         &apos;$&#123;status&#125;&apos; == &apos;PASS&apos;</span><br><span class="line">注意:字符串进行比较的时候需要加引号,如果不加引号的话就会报错,打印结果: FAIL : Evaluating expression &apos;PASS == PASS&apos; failed: NameError: name &apos;PASS&apos; is not defined</span><br><span class="line"></span><br><span class="line"># 数字类型校验</span><br><span class="line">$&#123;number1&#125;             Set Variable         1</span><br><span class="line">$&#123;number2&#125;             Set Variable         -1</span><br><span class="line">$&#123;number3&#125;             Set Variable         0</span><br><span class="line">Should Be True         $&#123;number1&#125; # pass</span><br><span class="line">Should Be True         $&#123;number2&#125; # pass</span><br><span class="line">Should Be True         $&#123;number3&#125; # fail</span><br><span class="line">注意:只有条件不为0的情况下才是通过的，如果判断的条件为0，那么报错。打印结果:FAIL : &apos;0&apos; should be true</span><br><span class="line"></span><br><span class="line"># 容器数据类型list校验-pass</span><br><span class="line">$&#123;list&#125;                Create List         1         2         3</span><br><span class="line">Should Be True         $&#123;list&#125;</span><br><span class="line"></span><br><span class="line"># 容器数据类型校验-fail</span><br><span class="line">$&#123;list&#125;                Create List</span><br><span class="line">Should Be True         $&#123;list&#125;</span><br><span class="line">注意:只有list不为空的情况下才能校验通过，如果list为空报错，打印结果: FAIL : &apos;[]&apos; should be true，字典也是一样</span><br><span class="line"></span><br><span class="line"># msg消息打印</span><br><span class="line">$&#123;rc&#125;                  Set Variable         $&#123;12&#125;</span><br><span class="line">Should Be True         $&#123;rc&#125; &lt; 10           message=校验通过</span><br><span class="line"># 打印结果:FAIL : message=校验通过</span><br></pre></td></tr></table></figure>
+        <p>说明:本文主要涉及到Builtln模块中的Converter转换操作，例如convert_to_integer，convert_to_binary等等，但是我主要是想讲解其中常用的2个关键字，分别是create_list与create_dictionary，对于其他的转换请大家自己阅读源码以及官方文档。</p>
+<p>(1).create_list(self, *items)</p>
+<p>定义:返回包含给定items的列表，可以将返回的列表分配给${scalar}和@{list} 变量</p>
+<p>*items:可变的参数列表</p>
+<p>以下是关于create_list这个关键字的基本操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 创建@list变量的list列表</span><br><span class="line">@&#123;list&#125;          Create List             a         b         c</span><br><span class="line">Log              ----@&#123;list&#125;----</span><br><span class="line"># @&#123;list&#125; = [ a | b | c ]</span><br><span class="line"># 打印结果:----[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]----</span><br><span class="line"></span><br><span class="line"># 创建$&#123;scalar&#125;变量的列表</span><br><span class="line">$&#123;scalar&#125;         Create List               a         b         c</span><br><span class="line">Log               ----$&#123;scalar&#125;----</span><br><span class="line"># $&#123;scalar&#125; = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line"># 打印结果:----[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]----</span><br><span class="line"></span><br><span class="line"># 创建int类型list的列表</span><br><span class="line">$&#123;ints&#125;          Create List              $&#123;1&#125;         $&#123;2&#125;         $&#123;3&#125;</span><br><span class="line">Log              ----$&#123;ints&#125;----</span><br><span class="line"># $&#123;ints&#125; = [1, 2, 3]</span><br><span class="line"># 打印结果:----[1, 2, 3]----</span><br><span class="line"></span><br><span class="line"># 创建$&#123;scalar&#125;变量，通过int类型创建的列表</span><br><span class="line">$&#123;ints1&#125;         Create List              1            2            3</span><br><span class="line">Log              ----$&#123;ints1&#125;----</span><br><span class="line"># $&#123;ints1&#125; = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;]</span><br><span class="line"># 打印结果:----[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;]----</span><br></pre></td></tr></table></figure>
 
-<p>(2).should_be_equal(self, first, second, msg=None, values=True,ignore_case=False)</p>
-<p>定义:如果给定对象不相等，则失败。</p>
-<p>first:第一个对象</p>
-<p>second:第二个对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出，则错误消息为first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second，如果values为false则打印错误消息格式为msg</p>
-<p>ignore_case:是否忽略大小写，默认不忽略</p>
-<p>注意:在RF3.1.2中版本中新增了formatter =’str’这个参数，控制如何格式化值，默认为str，在我们这个3.1.1版本中暂时不展示</p>
-<p>举例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 没有msg信息 -pass</span><br><span class="line">$&#123;a&#125;                    Create List         1            2         3</span><br><span class="line">$&#123;b&#125;                    Create List         1            2         3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;</span><br><span class="line"># 没有msg信息 -fail</span><br><span class="line">$&#123;a&#125;                    Create List         1            2         3</span><br><span class="line">$&#123;b&#125;                    Create List         1            4         3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;</span><br><span class="line"># 打印结果: FAIL : [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;] != [&apos;1&apos;, &apos;4&apos;, &apos;3&apos;]</span><br><span class="line"></span><br><span class="line"># 自定义msg -fail</span><br><span class="line">$&#123;a&#125;                    Create List         1            2                      3</span><br><span class="line">$&#123;b&#125;                    Create List         1            4                      3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;         测试失败</span><br><span class="line"># 打印结果: 测试失败: [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;] != [&apos;1&apos;, &apos;4&apos;, &apos;3&apos;]</span><br><span class="line"></span><br><span class="line"># 自定义msg和values，且values为布尔类型False</span><br><span class="line">$&#123;a&#125;                    Create List         1            2                      3</span><br><span class="line">$&#123;b&#125;                    Create List         1            4                      3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;         测试失败         False</span><br><span class="line"># 打印结果:FAIL : 测试失败</span><br><span class="line"></span><br><span class="line"># ignore_case默认不忽略大小写 -fail</span><br><span class="line">$&#123;a&#125;                    Set Variable         abc</span><br><span class="line">$&#123;b&#125;                    Set Variable         Abc</span><br><span class="line">Should Be Equal         $&#123;a&#125;                 $&#123;b&#125;</span><br><span class="line"># 打印结果:abc != Abc</span><br><span class="line"></span><br><span class="line"># ignore_case忽略大小写 -pass</span><br><span class="line">$&#123;a&#125;                    Set Variable         abc</span><br><span class="line">$&#123;b&#125;                    Set Variable         Abc</span><br><span class="line">Should Be Equal         $&#123;a&#125;                 $&#123;b&#125;         忽略大小写         True       True</span><br></pre></td></tr></table></figure>
+<p>好了，看到这里可能有很多人有点懵逼了，不就是创建一个简单的list类型的变量吗，为啥一下使用@list类型的变量，一下又是${scalar}类型是的变量，关键是打印出来的结果是一样的。有什么区别吗？那么下面我来对比一下他们之间的区别，在说两者之间的区别的时候，我想先说说在rf里面的变量的基本使用情况。</p>
+<p>首先要说的就是在RF框架中我们常用的变量有两类，一类是scalar类型的变量，另一类是list类型的变量，scalar类型的变量用’$‘做标识符，类似于上文中的${scalar}，list类型的变量用‘@’做标识符，类似我们上文中提到的@{list}，从标识上我们先简单的这样区分，list大家都很容易知道什么意思，就是我们经常使用的列表，那么什么是Scala呢？从中文的字面意思上来说叫做标量，从我个人使用的情况来看，我喜欢叫他单值变量，其实单值变量不仅仅是我们日常中的字符串，数值这样的，像单个对象或者是字典也是单值变量，因此从定义上来说@标识的变量肯定是list，但是’$‘标识的变量不一定是list，因为在rf中变量之间是可以进行转换的，例如：使用’$‘标识的变量也可以接收list值之后转变成list变量。后面会说如何进行转换。    </p>
+<p>那么在rf中变量之间是如何进行转换的呢？</p>
+<p>i.@{list}类型的变量转换为${scalar}类型的变量。</p>
+<p>这种转换的效果是将整个的list变成scalar，但是这种转换方式我个人觉得适用于那些只接受scalar变量参数的关键字，但是又想传入全部的list的值时使用，或者是就是单纯的想把list类型的变量当做是scalar类型的变量使用的情况：</p>
+<p>举例说明：</p>
+<p>对于Log这个关键字来说他是需要传入2个scalar类型的参数，一个是msg，另外一个是level，其中level的默认值为’info’。这个例子中简单的将@{a}转变成了${a}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 使用@&#123;list&#125;来给Log关键字传值</span><br><span class="line">@&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              @&#123;a&#125;</span><br><span class="line"># 打印结果:FAIL : Invalid log level &apos;efg&apos;,因为在这种情况下如果直接给Log赋值为@&#123;a&#125;,其实是将这个list中的第一个值abc赋值给msg，第二个值赋值给level，因为level中没有egf这个值，因此就会报错</span><br><span class="line"></span><br><span class="line"># 使用$&#123;list&#125;来给Log关键字传值</span><br><span class="line">@&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line"># 打印结果:INFO : [&apos;abc&apos;, &apos;efg&apos;]，这种情况下我们发现没有问题，是因为我们将@&#123;a&#125;转换为$&#123;a&#125;这种形式形成了一个单值变量，这样传值的时候就将[&apos;abc&apos;, &apos;efg&apos;]一起传给了msg，level不受影响还是默认的info。</span><br></pre></td></tr></table></figure>
 
-<p>(3).should_be_equal_as_integers(self,first, second, msg=None, values=True,base=None)</p>
-<p>定义:将对象转换为整数后，如果对象不相等则失败。</p>
-<p>first:第一个对象</p>
-<p>second:第二个对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出,则错误消息为。first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second,如果values为false则打印错误消息格式为msg</p>
-<p>base:默认情况下应为以10为底的整数,可以修改转换的基数</p>
-<p>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 没有msg -pass</span><br><span class="line">$&#123;a&#125;                                Set Variable         42</span><br><span class="line">$&#123;b&#125;                                Set Variable         $&#123;42&#125;</span><br><span class="line">Should Be Equal As Integers         $&#123;a&#125;                 $&#123;b&#125;</span><br><span class="line"></span><br><span class="line"># 有msg -fail</span><br><span class="line">$&#123;a&#125;                                Set Variable         42</span><br><span class="line">$&#123;b&#125;                                Set Variable         $&#123;43&#125;</span><br><span class="line">Should Be Equal As Integers         $&#123;a&#125;                 $&#123;b&#125;          message=转换失败</span><br><span class="line"># 打印结果: FAIL : message=转换失败: 42 != 43</span><br><span class="line"></span><br><span class="line"># 转换为16进制比较</span><br><span class="line">Should Be Equal As Integers         ABCD         abcd         base=16</span><br><span class="line"></span><br><span class="line"># 转换为默认的10进制比较</span><br><span class="line">Should Be Equal As Integers         0b1011         11</span><br></pre></td></tr></table></figure>
+<p>ii.${scalar}类型的变量转变成@{list}类型的变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line"># 打印结果:NFO : [&apos;abc&apos;, &apos;efg&apos;]</span><br><span class="line"></span><br><span class="line">$&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              ---@&#123;a&#125;---</span><br><span class="line"># 打印结果:INFO : ---[&apos;abc&apos;, &apos;efg&apos;]---,其实在通过Create List这个关键字在创建$&#123;a&#125;这个变量的时候已经是list类型的变量了，因为Log只能接收scalr类型的变量，因此需要加点其他的字符打印</span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(4).should_be_equal_as_numbers(self, first, second, msg=None, values=True,precision=6)</p>
-<p>定义:将对象转换为实数后，如果对象不相等则失败。</p>
-<p>irst:第一个对象</p>
-<p>second:第二个对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出,则错误消息为。first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second,如果values为false则打印错误消息格式为msg</p>
-<p>precision:浮点数的四舍五入，保留小数点后面几位，默认保留小数点后面6位，忽略精度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 默认保留6位 -pass</span><br><span class="line">$&#123;a&#125;                               Set Variable         1.1</span><br><span class="line">Should Be Equal As Numbers         $&#123;a&#125;                 1.1</span><br><span class="line"></span><br><span class="line"># 保留小数点后面1位 -pass</span><br><span class="line">Should Be Equal As Numbers         1.123         1.1         precision=1</span><br><span class="line"># 保留小数点后面1位 -fail</span><br><span class="line">Should Be Equal As Numbers         1.223         1.1         precision=1</span><br><span class="line"># 打印结果: FAIL : 1.2 != 1.1</span><br><span class="line"></span><br><span class="line"># 保留整数位 -pass</span><br><span class="line">Should Be Equal As Numbers         1.223         1.4         precision=0</span><br><span class="line"># 保留整数位 -fail</span><br><span class="line">Should Be Equal As Numbers         2.223         1.4         precision=0</span><br><span class="line"># 打印结果: FAIL : 2.0 != 1.0</span><br></pre></td></tr></table></figure>
+<p>说到这里可能还有些小伙伴不明白，其实我们在进行变量之间的转换的时候中间还有一点相互转换的限制。</p>
+<p>我们都知道在无论是哪种语言中变量的使用都需要进行初始化之后才能够使用，python中也不例外。我前面将‘@{a}’转换为’${a}’ ，然后又将’${a}’转换为‘@{a}’,我们rf框架会默认’${a}’是‘@{a}’ 的salar的形式,‘@{a}’是’${a}’的list形式，如果要想完成这样的转换，那么在这里的限制就是变量没有被初始化或者赋值过，如果变量被初始化或者被赋值过，那么这两个变量就会各自独立了。</p>
+<p>举例说明:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@&#123;a&#125;             Create List         abc          efg</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line">$&#123;a&#125;             Create List         abcd         efgf</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line"># 打印结果:</span><br><span class="line">INFO : @&#123;a&#125; = [ abc | efg ]</span><br><span class="line">INFO : [&apos;abc&apos;, &apos;efg&apos;]</span><br><span class="line">INFO : $&#123;a&#125; = [&apos;abcd&apos;, &apos;efgf&apos;]</span><br><span class="line">INFO : [&apos;abcd&apos;, &apos;efgf&apos;]</span><br><span class="line">说明:在第一行中@&#123;a&#125;被初始化，但是$&#123;a&#125;没有被初始化，因此$&#123;a&#125;打印出来的值跟@&#123;a&#125;打印出来的值一样，但是在第三行中$&#123;a&#125;被初始化之后，此时打印出来的$&#123;a&#125;就不是之前的@&#123;a&#125;了，而是重新赋值的$&#123;a&#125;了</span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(5).should_contain(self, container, item, msg=None, values=True,ignore_case=False)</p>
-<p>定义:如果container不包含item一次或多次，则失败。适用于字符串，列表以及任何支持Python in 运算符的操作。</p>
-<p>container:包含对象</p>
-<p>item:被包含对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出,则错误消息为。first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second，如果values为false则打印错误消息格式为msg</p>
-<p>ignore_case:是否忽略大小写，默认不忽略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># container包含item -pass</span><br><span class="line">$&#123;output&#125;              Set Variable         PASS12334</span><br><span class="line">Should Contain         $&#123;output&#125;            PASS</span><br><span class="line"># container不包含item -fail</span><br><span class="line">$&#123;output&#125;              Set Variable         PAS12334</span><br><span class="line">Should Contain         $&#123;output&#125;            PASS</span><br><span class="line"># 打印结果:FAIL : &apos;PAS12334&apos; does not contain &apos;PASS&apos;</span><br><span class="line"></span><br><span class="line"># 容器对象包含子对象</span><br><span class="line">$&#123;list&#125;                Create List         123         456                  789</span><br><span class="line">Should Contain         $&#123;list&#125;             456         msg=Failure!         values=False</span><br><span class="line"></span><br><span class="line"># 容器对象不包含子对象</span><br><span class="line">$&#123;list&#125;                Create List         123         456                  789</span><br><span class="line">Should Contain         $&#123;list&#125;             45          msg=Failure!         values=False</span><br><span class="line"># 打印结果: FAIL : Failure!</span><br><span class="line"></span><br><span class="line"># 容器对象包含子对象忽略大小写</span><br><span class="line">$&#123;list&#125;                Create List         ValuE         456                      789</span><br><span class="line">Should Contain         $&#123;list&#125;             value         ignore_case=True</span><br></pre></td></tr></table></figure>
+<p>综上所述: 这边我总结一下，如果我们以后再rf中使用变量的时候，如果想将一个变量转变成另外一个变量，只要目标的变量没有被初始化过或者赋值过我们都是可以进行相互之间的转化的，但是如果被初始化过或者赋值过那么我们就无法进行相互的转换了，这点我们在进行用例设计的时候应该需要注意。经过我的这番说明，小伙伴们应该知道为啥开始的时候一下使用@list类型的变量，一下又是${scalar}类型的变量了吧，其实没啥区别，大家在以后的工作中妥善使用就好了，建议是如果不做循环的时候我们就使用’${}’就可以了，如果需要进行循环的时候我们就使用‘@{}’。</p>
+<p>(2).create_dictionary(self, *items)</p>
+<p>定义:根据给定的内容创建并返回一个字典items</p>
+<p>*items:可变的参数列表</p>
+<p>以下是关于create_dictionary这个关键字的基本操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># key=value形式创建字典并打印&amp;&#123;dict&#125; -fail</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key=value         foo=bar</span><br><span class="line">Log              &amp;&#123;dict&#125;</span><br><span class="line"># 打印结果:Log ➞ Keyword &apos;BuiltIn.Log&apos; expected 1 to 5 arguments, got 0.</span><br><span class="line"></span><br><span class="line"># key=value形式创建字典并打印$&#123;dict&#125; -pass</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key=value         foo=bar</span><br><span class="line">Log              $&#123;dict&#125;</span><br><span class="line"># 打印结果:INFO : &#123;&apos;key&apos;: &apos;value&apos;, &apos;foo&apos;: &apos;bar&apos;&#125;,原因在这里就不做分析了，跟上文中的create_list一样</span><br><span class="line"></span><br><span class="line"># key,value打散的形式创建字典并打印$&#123;dict&#125; -pass</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key         value         foo         bar</span><br><span class="line">Log              $&#123;dict&#125;</span><br><span class="line"></span><br><span class="line"># 向一个字典中添加元素</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key=value         foo=bar</span><br><span class="line">&amp;&#123;dict1&#125;         Create Dictionary         $&#123;1&#125;=$&#123;2&#125;         &amp;&#123;dict&#125;         foo=new</span><br><span class="line">Log              $&#123;dict1&#125;</span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(6).should_contain_any(self, container, <em>items, *</em>configuration)</p>
-<p>定义:如果container只要包含其中任何一个就成功，相当于or，只有 *items全部都不满足才失败</p>
-<p>container:包含对象</p>
-<p>*items:可变数量的子对象</p>
-<p>**configuration:msg，values，ignore_case类型的配置</p>
-<p>注意:这个方法是Robot Framework 3.0.1中的新增功能</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># *items全部不包含 -fail</span><br><span class="line">$&#123;string&#125;                  Set Variable         ValuE</span><br><span class="line">Should Contain Any         $&#123;string&#125;            x             y         z</span><br><span class="line"># 打印结果:FAIL : &apos;ValuE&apos; does not contain any of &apos;x&apos;, &apos;y&apos; or &apos;z&apos;</span><br><span class="line"></span><br><span class="line"># *items全部包含其中一个 -pass</span><br><span class="line">$&#123;string&#125;                  Set Variable         ValuE</span><br><span class="line">Should Contain Any         $&#123;string&#125;            x             y         u</span><br></pre></td></tr></table></figure>
+<p>说明:如果要比较两个字典是否相等，应该要转换为$的形式去比较，&amp;的形式会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 字典比较时使用&amp; -fail</span><br><span class="line">&amp;&#123;dict1&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">&amp;&#123;dict2&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">Should Be Equal         &amp;&#123;dict1&#125;                  &amp;&#123;dict2&#125;</span><br><span class="line"># 打印结果:FAIL : Keyword &apos;BuiltIn.Should Be Equal&apos; expected 2 to 5 arguments, got 0.</span><br><span class="line"></span><br><span class="line"># 字典比较时使用$ -pass</span><br><span class="line">&amp;&#123;dict1&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">&amp;&#123;dict2&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">Should Be Equal         $&#123;dict1&#125;                  $&#123;dict2&#125;</span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(7).get_length(self, item)</p>
-<p>定义:返回并以整数形式记录给定item的长度,该item可以是任何具有长度的内容，例如字符串，列表或字典。关键字首先尝试使用Python函数获取长度，该函数len在’<strong>len</strong>‘内部调用该item的方法。如果失败，则关键字尝试直接调用该item的length和size方法。最后的尝试是尝试获取item的length属性的值。如果所有这些尝试均未成功，则关键字失败。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 计算字符串的长度</span><br><span class="line">$&#123;length&#125;   Get Length    Hello, world!      </span><br><span class="line">Should Be Equal As Integers   $&#123;length&#125;     13  </span><br><span class="line"></span><br><span class="line"># 计算list的长度</span><br><span class="line">@&#123;list&#125;     Create List   Hello,        world! </span><br><span class="line">$&#123;length&#125;    Get Length   $&#123;list&#125;     </span><br><span class="line">Should Be Equal As Integers   $&#123;length&#125;      2</span><br></pre></td></tr></table></figure>
-
+<p>说明:建议循环访问字典的时候将$改为&amp;</p>
 
       
     </div>
@@ -600,15 +570,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/11/26/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify/" rel="next" title="RF中常见关键字的用法之Builtln-Verify">
+                <i class="fa fa-chevron-left"></i> RF中常见关键字的用法之Builtln-Verify
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/27/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter/" rel="prev" title="RF中常见关键字的用法之Builtln-Converter">
-                RF中常见关键字的用法之Builtln-Converter <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
