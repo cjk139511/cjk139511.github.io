@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>RF中常见关键字的用法之Builtln-Control</title>
+    <url>/2019/12/03/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Control/</url>
+    <content><![CDATA[<p>说明:这部分关键字是RF中控制循环的终止以及对返回值的控制,</p>
+<p>(1).return_from_keyword(self, *return_values)</p>
+<p>定义:从用户关键字中返回值</p>
+<p>*return_values:可以允许返回多个值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*** Test Case ***</span><br><span class="line">测试case</span><br><span class="line">    @&#123;LIST&#125;                     Create List                       foo                         baz</span><br><span class="line">    $&#123;index&#125; =                  FindIndex                         baz                         @&#123;LIST&#125;</span><br><span class="line">    Should Be Equal             $&#123;index&#125;                          $&#123;1&#125;</span><br><span class="line">    $&#123;index&#125; =                  FindIndex                         non existing                @&#123;LIST&#125;</span><br><span class="line">    Should Be Equal             $&#123;index&#125;                          $&#123;-1&#125;</span><br><span class="line"></span><br><span class="line">*** Keywords ***</span><br><span class="line">FindIndex</span><br><span class="line">    [Arguments]                 $&#123;element&#125;                        @&#123;items&#125;</span><br><span class="line">    $&#123;index&#125; =                  Set Variable                      $&#123;0&#125;</span><br><span class="line">    :FOR  $&#123;item&#125;  IN  @&#123;items&#125;</span><br><span class="line">    \    Run Keyword If         &apos;$&#123;item&#125;&apos; == &apos;$&#123;element&#125;&apos;         Return From Keyword         $&#123;index&#125;</span><br><span class="line">    \    $&#123;index&#125; =             Set Variable                      $&#123;index + 1&#125;</span><br><span class="line">    Return From Keyword         $&#123;-1&#125;</span><br><span class="line"># 打印结果:</span><br><span class="line">INFO : @&#123;LIST&#125; = [ foo | baz ]</span><br><span class="line">.</span><br><span class="line">INFO : $&#123;index&#125; = 0</span><br><span class="line"></span><br><span class="line">INFO : $&#123;index&#125; = 1</span><br><span class="line">..</span><br><span class="line">INFO : $&#123;index&#125; = 0</span><br><span class="line"></span><br><span class="line">INFO : $&#123;index&#125; = 1</span><br><span class="line"></span><br><span class="line">INFO : $&#123;index&#125; = 2</span><br><span class="line"></span><br><span class="line">INFO : $&#123;index&#125; = -1</span><br><span class="line"></span><br><span class="line"># 说明:return_from_keyword_if更加简单一点，推荐使用</span><br><span class="line">*** Keywords ***</span><br><span class="line">FindIndex</span><br><span class="line">    [Arguments]                         $&#123;element&#125;                        @&#123;items&#125;</span><br><span class="line">    $&#123;index&#125; =                          Set Variable                      $&#123;0&#125;</span><br><span class="line">    :FOR  $&#123;item&#125;  IN  @&#123;items&#125;</span><br><span class="line">    \    Return From Keyword If         &apos;$&#123;item&#125;&apos; == &apos;$&#123;element&#125;&apos;         $&#123;index&#125;</span><br><span class="line">    \    $&#123;index&#125; =                     Set Variable                      $&#123;index + 1&#125;</span><br><span class="line">    Return From Keyword                 $&#123;-1&#125;</span><br></pre></td></tr></table></figure>
+
+<p>(2).exit_for_loop_if(self, condition))</p>
+<p>定义:根据条件停止整个for循环</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@&#123;LIST&#125;                       Create List                    foo         EXIT         baz</span><br><span class="line">:FOR  $&#123;element&#125;  IN  @&#123;LIST&#125;</span><br><span class="line">\    Exit For Loop If         &apos;$&#123;element&#125;&apos; == &apos;EXIT&apos;</span><br><span class="line">\    Log                      $&#123;element&#125;</span><br><span class="line"></span><br><span class="line"># 打印结果：</span><br><span class="line">INFO : @&#123;LIST&#125; = [ foo | EXIT | baz ]</span><br><span class="line">.</span><br><span class="line">INFO : foo</span><br><span class="line"></span><br><span class="line">INFO : Exiting for loop altogether.</span><br></pre></td></tr></table></figure>
+
+<p>(3).continue_for_loop_if(self, condition)</p>
+<p>定义:根据条件停止当前循环</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@&#123;LIST&#125;                       Create List                    foo         EXIT         baz</span><br><span class="line">:FOR  $&#123;element&#125;  IN  @&#123;LIST&#125;</span><br><span class="line">\    Exit For Loop If         &apos;$&#123;element&#125;&apos; == &apos;EXIT&apos;</span><br><span class="line">\    Log                      $&#123;element&#125;</span><br><span class="line"># 打印结果：</span><br><span class="line">INFO : @&#123;LIST&#125; = [ foo | EXIT | baz ]</span><br><span class="line">.</span><br><span class="line">INFO : foo</span><br><span class="line"></span><br><span class="line">INFO : Continuing for loop from the next iteration.</span><br><span class="line"></span><br><span class="line">INFO : baz</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>robot framework教程</category>
+      </categories>
+      <tags>
+        <tag>robot framework</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>RF中常见关键字的用法之Builtln-Converter</title>
     <url>/2019/11/27/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter/</url>
     <content><![CDATA[<p>说明:本文主要涉及到Builtln模块中的Converter转换操作，例如convert_to_integer，convert_to_binary等等，但是我主要是想讲解其中常用的2个关键字，分别是create_list与create_dictionary，对于其他的转换请大家自己阅读源码以及官方文档。</p>
