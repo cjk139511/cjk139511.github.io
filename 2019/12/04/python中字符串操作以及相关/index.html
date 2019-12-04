@@ -90,7 +90,7 @@
 
 
 
-  <meta name="keywords" content="robot framework," />
+  <meta name="keywords" content="python基础," />
 
 
 
@@ -101,15 +101,15 @@
 
 
 
-<meta name="description" content="说明:本文主要涉及到Builtln模块中的Converter转换操作，例如convert_to_integer，convert_to_binary等等，但是我主要是想讲解其中常用的2个关键字，分别是create_list与create_dictionary，对于其他的转换请大家自己阅读源码以及官方文档。 (1).create_list(self, *items) 定义:返回包含给定items的列表">
-<meta name="keywords" content="robot framework">
+<meta name="description" content="一:什么是字符串 ​        很多人初学编程时，总是担心自己数学不行，潜意识里认为数学好才能编程。实际上，大多数程序员打交道最多的是“字符串”而不是“数字”。因为，编程是用来解决现实问题的，因此逻辑思维的重要性远远超过数学能力。 字符串的本质是:字符序列。Python的字符串是不可变的，我们无法对原字符串做任何修改。但可以将字符串的一部分复制到新创建的字符串，达到“看起来修改”的效果。 Py">
+<meta name="keywords" content="python基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RF中常见关键字的用法之Builtln-Converter">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.cpmuyi.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter&#x2F;index.html">
+<meta property="og:title" content="python中字符串操作以及相关">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.cpmuyi.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;python%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3&#x2F;index.html">
 <meta property="og:site_name" content="chenjunkan Blog">
-<meta property="og:description" content="说明:本文主要涉及到Builtln模块中的Converter转换操作，例如convert_to_integer，convert_to_binary等等，但是我主要是想讲解其中常用的2个关键字，分别是create_list与create_dictionary，对于其他的转换请大家自己阅读源码以及官方文档。 (1).create_list(self, *items) 定义:返回包含给定items的列表">
+<meta property="og:description" content="一:什么是字符串 ​        很多人初学编程时，总是担心自己数学不行，潜意识里认为数学好才能编程。实际上，大多数程序员打交道最多的是“字符串”而不是“数字”。因为，编程是用来解决现实问题的，因此逻辑思维的重要性远远超过数学能力。 字符串的本质是:字符序列。Python的字符串是不可变的，我们无法对原字符串做任何修改。但可以将字符串的一部分复制到新创建的字符串，达到“看起来修改”的效果。 Py">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T09:20:17.495Z">
+<meta property="og:updated_time" content="2019-12-04T10:14:48.836Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="https://www.cpmuyi.com/2019/11/27/RF中常见关键字的用法之Builtln-Converter/"/>
+  <link rel="canonical" href="https://www.cpmuyi.com/2019/12/04/python中字符串操作以及相关/"/>
 
 
 
@@ -156,7 +156,7 @@
   </script>
 
 
-  <title>RF中常见关键字的用法之Builtln-Converter | chenjunkan Blog</title>
+  <title>python中字符串操作以及相关 | chenjunkan Blog</title>
   
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.cpmuyi.com/2019/11/27/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter/">
+    <link itemprop="mainEntityOfPage" href="https://www.cpmuyi.com/2019/12/04/python%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenjunkan">
@@ -344,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RF中常见关键字的用法之Builtln-Converter</h1>
+          <h1 class="post-title" itemprop="name headline">python中字符串操作以及相关</h1>
         
 
         <div class="post-meta">
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-27T23:16:12+08:00">
-                2019-11-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T16:39:25+08:00">
+                2019-12-04
               </time>
             
 
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-30T17:20:17+08:00">
-                2019-11-30
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-04T18:14:48+08:00">
+                2019-12-04
               </time>
             
           </span>
@@ -391,8 +391,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/robot-framework%E6%95%99%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">robot framework教程</span>
+                  <a href="/categories/python%E6%95%99%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">python教程</span>
                   </a>
                 </span>
 
@@ -408,7 +408,7 @@
 
           
           
-             <span id="/2019/11/27/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter/" class="leancloud_visitors" data-flag-title="RF中常见关键字的用法之Builtln-Converter">
+             <span id="/2019/12/04/python%E4%B8%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3/" class="leancloud_visitors" data-flag-title="python中字符串操作以及相关">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.2k
+                  1.8k
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  6
                 </span>
               
             </div>
@@ -471,41 +471,102 @@
       
 
       
-        <p>说明:本文主要涉及到Builtln模块中的Converter转换操作，例如convert_to_integer，convert_to_binary等等，但是我主要是想讲解其中常用的2个关键字，分别是create_list与create_dictionary，对于其他的转换请大家自己阅读源码以及官方文档。</p>
-<p>(1).create_list(self, *items)</p>
-<p>定义:返回包含给定items的列表，可以将返回的列表分配给${scalar}和@{list} 变量</p>
-<p>*items:可变的参数列表</p>
-<p>以下是关于create_list这个关键字的基本操作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 创建@list变量的list列表</span><br><span class="line">@&#123;list&#125;          Create List             a         b         c</span><br><span class="line">Log              ----@&#123;list&#125;----</span><br><span class="line"># @&#123;list&#125; = [ a | b | c ]</span><br><span class="line"># 打印结果:----[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]----</span><br><span class="line"></span><br><span class="line"># 创建$&#123;scalar&#125;变量的列表</span><br><span class="line">$&#123;scalar&#125;         Create List               a         b         c</span><br><span class="line">Log               ----$&#123;scalar&#125;----</span><br><span class="line"># $&#123;scalar&#125; = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line"># 打印结果:----[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]----</span><br><span class="line"></span><br><span class="line"># 创建int类型list的列表</span><br><span class="line">$&#123;ints&#125;          Create List              $&#123;1&#125;         $&#123;2&#125;         $&#123;3&#125;</span><br><span class="line">Log              ----$&#123;ints&#125;----</span><br><span class="line"># $&#123;ints&#125; = [1, 2, 3]</span><br><span class="line"># 打印结果:----[1, 2, 3]----</span><br><span class="line"></span><br><span class="line"># 创建$&#123;scalar&#125;变量，通过int类型创建的列表</span><br><span class="line">$&#123;ints1&#125;         Create List              1            2            3</span><br><span class="line">Log              ----$&#123;ints1&#125;----</span><br><span class="line"># $&#123;ints1&#125; = [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;]</span><br><span class="line"># 打印结果:----[&apos;1&apos;, &apos;2&apos;, &apos;3&apos;]----</span><br></pre></td></tr></table></figure>
+        <p>一:什么是字符串</p>
+<p>​        很多人初学编程时，总是担心自己数学不行，潜意识里认为数学好才能编程。实际上，大多数程序员打交道最多的是“字符串”而不是“数字”。因为，编程是用来解决现实问题的，因此逻辑思维的重要性远远超过数学能力。 字符串的本质是:字符序列。Python的字符串是不可变的，我们无法对原字符串做任何修改。但可以将字符串的一部分复制到新创建的字符串，达到“看起来修改”的效果。 Python不支持单字符类型，单字符也是作为一个字符串使用的。 </p>
+<p>二:字符串的创建</p>
+<p>1.我们可以通过单引号或双引号创建字符串。例如:a=’abc’; b=”cjk” 使用两种引号的好处是可以创建本身就包含引号的字符串，而不用使用转义字符。例如: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过双引号创建字符串</span></span><br><span class="line">a = <span class="string">"I'm a teacher!"</span></span><br><span class="line">print(a) <span class="comment"># I'm a teacher!</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过单引号创建字符串</span></span><br><span class="line">b = <span class="string">'my_name is "TOM"'</span></span><br><span class="line">print(b) <span class="comment"># my_name is "TOM"</span></span><br></pre></td></tr></table></figure>
 
-<p>好了，看到这里可能有很多人有点懵逼了，不就是创建一个简单的list类型的变量吗，为啥一下使用@list类型的变量，一下又是${scalar}类型是的变量，关键是打印出来的结果是一样的。有什么区别吗？那么下面我来对比一下他们之间的区别，在说两者之间的区别的时候，我想先说说在rf里面的变量的基本使用情况。</p>
-<p>首先要说的就是在RF框架中我们常用的变量有两类，一类是scalar类型的变量，另一类是list类型的变量，scalar类型的变量用’$‘做标识符，类似于上文中的${scalar}，list类型的变量用‘@’做标识符，类似我们上文中提到的@{list}，从标识上我们先简单的这样区分，list大家都很容易知道什么意思，就是我们经常使用的列表，那么什么是Scala呢？从中文的字面意思上来说叫做标量，从我个人使用的情况来看，我喜欢叫他单值变量，其实单值变量不仅仅是我们日常中的字符串，数值这样的，像单个对象或者是字典也是单值变量，因此从定义上来说@标识的变量肯定是list，但是’$‘标识的变量不一定是list，因为在rf中变量之间是可以进行转换的，例如：使用’$‘标识的变量也可以接收list值之后转变成list变量。后面会说如何进行转换。    </p>
-<p>那么在rf中变量之间是如何进行转换的呢？</p>
-<p>i.@{list}类型的变量转换为${scalar}类型的变量。</p>
-<p>这种转换的效果是将整个的list变成scalar，但是这种转换方式我个人觉得适用于那些只接受scalar变量参数的关键字，但是又想传入全部的list的值时使用，或者是就是单纯的想把list类型的变量当做是scalar类型的变量使用的情况：</p>
-<p>举例说明：</p>
-<p>对于Log这个关键字来说他是需要传入2个scalar类型的参数，一个是msg，另外一个是level，其中level的默认值为’info’。这个例子中简单的将@{a}转变成了${a}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 使用@&#123;list&#125;来给Log关键字传值</span><br><span class="line">@&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              @&#123;a&#125;</span><br><span class="line"># 打印结果:FAIL : Invalid log level &apos;efg&apos;,因为在这种情况下如果直接给Log赋值为@&#123;a&#125;,其实是将这个list中的第一个值abc赋值给msg，第二个值赋值给level，因为level中没有egf这个值，因此就会报错</span><br><span class="line"></span><br><span class="line"># 使用$&#123;list&#125;来给Log关键字传值</span><br><span class="line">@&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line"># 打印结果:INFO : [&apos;abc&apos;, &apos;efg&apos;]，这种情况下我们发现没有问题，是因为我们将@&#123;a&#125;转换为$&#123;a&#125;这种形式形成了一个单值变量，这样传值的时候就将[&apos;abc&apos;, &apos;efg&apos;]一起传给了msg，level不受影响还是默认的info。</span><br></pre></td></tr></table></figure>
+<p>2.连续三个单引号或三个双引号，可以帮助我们创建多行字符串。例如: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">resume = <span class="string">''' name="gaoqi"</span></span><br><span class="line"><span class="string">company="sxt" age=18</span></span><br><span class="line"><span class="string">lover="Tom"'''</span></span><br><span class="line">print(resume)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">name=<span class="string">"gaoqi"</span></span><br><span class="line">company=<span class="string">"sxt"</span> age=<span class="number">18</span></span><br><span class="line">lover=<span class="string">"Tom"</span></span><br></pre></td></tr></table></figure>
 
-<p>ii.${scalar}类型的变量转变成@{list}类型的变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line"># 打印结果:NFO : [&apos;abc&apos;, &apos;efg&apos;]</span><br><span class="line"></span><br><span class="line">$&#123;a&#125;             Create List         abc         efg</span><br><span class="line">Log              ---@&#123;a&#125;---</span><br><span class="line"># 打印结果:INFO : ---[&apos;abc&apos;, &apos;efg&apos;]---,其实在通过Create List这个关键字在创建$&#123;a&#125;这个变量的时候已经是list类型的变量了，因为Log只能接收scalr类型的变量，因此需要加点其他的字符打印</span><br></pre></td></tr></table></figure>
+<p>3.空字符串</p>
+<p>Python 允许空字符串的存在，不包含任何字符且长度为 0。例如: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="string">''</span></span><br><span class="line">print(len(c)) <span class="comment"># 0</span></span><br></pre></td></tr></table></figure>
 
-<p>说到这里可能还有些小伙伴不明白，其实我们在进行变量之间的转换的时候中间还有一点相互转换的限制。</p>
-<p>我们都知道在无论是哪种语言中变量的使用都需要进行初始化之后才能够使用，python中也不例外。我前面将‘@{a}’转换为’${a}’ ，然后又将’${a}’转换为‘@{a}’,我们rf框架会默认’${a}’是‘@{a}’ 的salar的形式,‘@{a}’是’${a}’的list形式，如果要想完成这样的转换，那么在这里的限制就是变量没有被初始化或者赋值过，如果变量被初始化或者被赋值过，那么这两个变量就会各自独立了。</p>
-<p>举例说明:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@&#123;a&#125;             Create List         abc          efg</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line">$&#123;a&#125;             Create List         abcd         efgf</span><br><span class="line">Log              $&#123;a&#125;</span><br><span class="line"># 打印结果:</span><br><span class="line">INFO : @&#123;a&#125; = [ abc | efg ]</span><br><span class="line">INFO : [&apos;abc&apos;, &apos;efg&apos;]</span><br><span class="line">INFO : $&#123;a&#125; = [&apos;abcd&apos;, &apos;efgf&apos;]</span><br><span class="line">INFO : [&apos;abcd&apos;, &apos;efgf&apos;]</span><br><span class="line">说明:在第一行中@&#123;a&#125;被初始化，但是$&#123;a&#125;没有被初始化，因此$&#123;a&#125;打印出来的值跟@&#123;a&#125;打印出来的值一样，但是在第三行中$&#123;a&#125;被初始化之后，此时打印出来的$&#123;a&#125;就不是之前的@&#123;a&#125;了，而是重新赋值的$&#123;a&#125;了</span><br></pre></td></tr></table></figure>
+<p>三:字符串中的相关操作</p>
+<p>1.字符串的拼接</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以使用+将多个字符串拼接起来</span></span><br><span class="line">a = <span class="string">'a'</span> + <span class="string">'b'</span></span><br><span class="line">print(a) <span class="comment"># ab</span></span><br><span class="line"><span class="comment"># 注意:(1)如果+两边都是字符串，则拼接。(2)如果+两边都是数字，则加法运算。(3)如果+两边类型不同，则抛出异常。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以将多个字面字符串直接放到一起实现拼接</span></span><br><span class="line">a = <span class="string">'a'</span><span class="string">'b'</span></span><br><span class="line">print(a) <span class="comment"># ab</span></span><br><span class="line"><span class="comment"># 注意:一般不使用这种用法，可读性较差</span></span><br></pre></td></tr></table></figure>
 
-<p>综上所述: 这边我总结一下，如果我们以后再rf中使用变量的时候，如果想将一个变量转变成另外一个变量，只要目标的变量没有被初始化过或者赋值过我们都是可以进行相互之间的转化的，但是如果被初始化过或者赋值过那么我们就无法进行相互的转换了，这点我们在进行用例设计的时候应该需要注意。经过我的这番说明，小伙伴们应该知道为啥开始的时候一下使用@list类型的变量，一下又是${scalar}类型的变量了吧，其实没啥区别，大家在以后的工作中妥善使用就好了，建议是如果不做循环的时候我们就使用’${}’就可以了，如果需要进行循环的时候我们就使用‘@{}’。</p>
-<p>(2).create_dictionary(self, *items)</p>
-<p>定义:根据给定的内容创建并返回一个字典items</p>
-<p>*items:可变的参数列表</p>
-<p>以下是关于create_dictionary这个关键字的基本操作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># key=value形式创建字典并打印&amp;&#123;dict&#125; -fail</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key=value         foo=bar</span><br><span class="line">Log              &amp;&#123;dict&#125;</span><br><span class="line"># 打印结果:Log ➞ Keyword &apos;BuiltIn.Log&apos; expected 1 to 5 arguments, got 0.</span><br><span class="line"></span><br><span class="line"># key=value形式创建字典并打印$&#123;dict&#125; -pass</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key=value         foo=bar</span><br><span class="line">Log              $&#123;dict&#125;</span><br><span class="line"># 打印结果:INFO : &#123;&apos;key&apos;: &apos;value&apos;, &apos;foo&apos;: &apos;bar&apos;&#125;,原因在这里就不做分析了，跟上文中的create_list一样</span><br><span class="line"></span><br><span class="line"># key,value打散的形式创建字典并打印$&#123;dict&#125; -pass</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key         value         foo         bar</span><br><span class="line">Log              $&#123;dict&#125;</span><br><span class="line"></span><br><span class="line"># 向一个字典中添加元素</span><br><span class="line">&amp;&#123;dict&#125;          Create Dictionary         key=value         foo=bar</span><br><span class="line">&amp;&#123;dict1&#125;         Create Dictionary         $&#123;1&#125;=$&#123;2&#125;         &amp;&#123;dict&#125;         foo=new</span><br><span class="line">Log              $&#123;dict1&#125;</span><br></pre></td></tr></table></figure>
+<p>2.字符串的复制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'cjk'</span> * <span class="number">3</span></span><br><span class="line">print(a) <span class="comment"># cjkcjkcjk</span></span><br><span class="line"><span class="comment"># 字符串的复制就是将多个字符串拼接到一起,复制的规则:只能是字符串和数字相乘</span></span><br></pre></td></tr></table></figure>
 
-<p>说明:如果要比较两个字典是否相等，应该要转换为$的形式去比较，&amp;的形式会报错</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 字典比较时使用&amp; -fail</span><br><span class="line">&amp;&#123;dict1&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">&amp;&#123;dict2&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">Should Be Equal         &amp;&#123;dict1&#125;                  &amp;&#123;dict2&#125;</span><br><span class="line"># 打印结果:FAIL : Keyword &apos;BuiltIn.Should Be Equal&apos; expected 2 to 5 arguments, got 0.</span><br><span class="line"></span><br><span class="line"># 字典比较时使用$ -pass</span><br><span class="line">&amp;&#123;dict1&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">&amp;&#123;dict2&#125;                Create Dictionary         key=value         foo=bar</span><br><span class="line">Should Be Equal         $&#123;dict1&#125;                  $&#123;dict2&#125;</span><br></pre></td></tr></table></figure>
+<p>3.从控制台读取字符串 </p>
+<p>我们可以使用 input()从控制台读取键盘输入的内容 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">myname = input(<span class="string">"请输入名字:"</span>)</span><br><span class="line"></span><br><span class="line">print(myname)</span><br></pre></td></tr></table></figure>
 
-<p>说明:建议循环访问字典的时候将$改为&amp;</p>
+<p>4.str()实现数字转字符串 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str(5.20) ==&gt; ‘5.20’ str(3.14e2)==&gt;’314.0’ str(True) ==&gt; ‘True’</span><br><span class="line"><span class="comment"># 注意:当我们调用 print()函数时，解释器自动调用了 str()将非字符串的对象转成了字符串</span></span><br></pre></td></tr></table></figure>
+
+<p>5.replace()实现字符串替换 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">'abcdefghijklmnopqrstuvwxyz'</span></span><br><span class="line">a = a.replace(<span class="string">'c'</span>, <span class="string">'陈'</span>)</span><br><span class="line">print(a)</span><br><span class="line"><span class="comment"># ab陈defghijklmnopqrstuvwxyz</span></span><br><span class="line"><span class="comment"># 注意:整个过程中，实际上我们是创建了新的字符串对象，并指向了变量 a，而不是修改了以前的字符串</span></span><br></pre></td></tr></table></figure>
+
+<p>6.字符串切片 slice 操作 </p>
+<p>切片 slice 操作可以让我们快速的提取子字符串。标准格式为: </p>
+<p>[起始偏移量 start:终止偏移量 end:步长 step] </p>
+<table>
+<thead>
+<tr>
+<th>操作和说明</th>
+<th>示例</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[:] 提取整个字符串</td>
+<td>“abcdef”[:]</td>
+<td>”abcdef”</td>
+</tr>
+<tr>
+<td>[start:]从 start 索引开始到结尾</td>
+<td>“abcdef”[2:]</td>
+<td>“cdef”</td>
+</tr>
+<tr>
+<td>[:end]从头开始知道 end-1</td>
+<td>“abcdef”[:2]</td>
+<td>“ab”</td>
+</tr>
+<tr>
+<td>[start:end]从 start 到 end-1</td>
+<td>“abcdef”[2:4]</td>
+<td>“cd”</td>
+</tr>
+<tr>
+<td>[start: end:step]从 start 提取到 end-1，步长是 step</td>
+<td>“abcdef”[1:5:2]</td>
+<td>“bd”</td>
+</tr>
+<tr>
+<td>倒数三个</td>
+<td>“abcdefghijklmnopqrstuv wxyz”[-3:]</td>
+<td>“xyz”</td>
+</tr>
+<tr>
+<td>倒数第八个到倒数第 三个(包头不包尾)</td>
+<td>“abcdefghijklmnopqrstuv wxyz”[-8:-3]</td>
+<td>‘stuvw’</td>
+</tr>
+<tr>
+<td>步长为负，从右到左 反向提取</td>
+<td>“abcdefghijklmnopqrstuv wxyz”[::-1]</td>
+<td>‘zyxwvutsrqpon mlkjihgfedcba’</td>
+</tr>
+</tbody></table>
+<p>注意:切片操作时，起始偏移量和终止偏移量不在[0,字符串长度-1]这个范围，也不会报错。起始偏移量小于0则会当做 0，终止偏移量大于“长度-1”会被当成-1。</p>
+<p>(7).split()分割和 join()合并 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># split()可以基于指定分隔符将字符串分隔成多个子字符串(存储到列表中)。如果不指定分隔符，则默认使用空白字符(换行符/空格/制表符)</span></span><br><span class="line">a = <span class="string">"to be or not to be"</span></span><br><span class="line">b = a.split()</span><br><span class="line">print(b)</span><br><span class="line"><span class="comment"># ['to', 'be', 'or', 'not', 'to', 'be']</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># join()的作用和split()作用刚好相反，用于将一系列子字符串连接起来</span></span><br><span class="line">a = [<span class="string">'cjk'</span>,<span class="string">'cjk100'</span>,<span class="string">'cjk200'</span>]</span><br><span class="line">b = <span class="string">'*'</span>.join(a)</span><br><span class="line">print(b)</span><br><span class="line"><span class="comment"># 'cjk*cjk100*cjk200'</span></span><br></pre></td></tr></table></figure>
+
+<p>拼接字符串要点: 使用字符串拼接符+，会生成新的字符串对象，因此不推荐使用+来拼接字符串。推荐使用 join 函数，因为 join 函数在拼接字符串之前会计算所有字符串的长度，然后逐一拷贝， 仅新建一次对象。 </p>
+<p>(8).字符串比较和同一性 </p>
+<p>我们可以直接使用==,!=对字符串进行比较，是否含有相同的字符。我们使用 is / not is，判断两个对象是否同一个对象。比较的是对象的地址，即 id(obj1)是否和 id(obj2)相等。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">在Python中，id是什么？id是内存地址，比如你利用id()内置函数去查询一个数据的内存地址：</span><br><span class="line">name = ‘meet’</span><br><span class="line">s_id = id(name) <span class="comment"># 通过内置方法获取name变量对应的值在内存中的编号</span></span><br><span class="line">print(s_id) <span class="comment"># 2055782908568 这就是name在内存中的编号</span></span><br><span class="line">那么 <span class="keyword">is</span> 是什么？ == 又是什么？</span><br><span class="line"></span><br><span class="line">== 是比较的两边的数值是否相等，而 <span class="keyword">is</span> 是比较的两边的内存地址是否相等。 如果内存地址相等，那么这两边其实是指向同一个内存地址。</span><br></pre></td></tr></table></figure>
+
+<p>(9).成员操作符 </p>
+<p>in /not in 关键字，判断某个字符(子字符串)是否存在于字符串中 。</p>
+<p>(10).字符串方法大全</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全部大写</span></span><br><span class="line">name = <span class="string">'junkan'</span></span><br><span class="line">new_name = name.upper()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 把这个字符串全部变成大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 全部小写</span></span><br><span class="line">name = <span class="string">'JUNKAN'</span></span><br><span class="line">new_name = name.lower()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 把这个字符串全部变成小写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 首字母大写</span></span><br><span class="line">name = <span class="string">'junkandasx'</span></span><br><span class="line">new_name = name.capitalize()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 首字母大写</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 大小写转换</span></span><br><span class="line">name = <span class="string">'junkandasx'</span></span><br><span class="line">new_name = name.swapcase()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 字符串大小写转换</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以什么开头</span></span><br><span class="line">name = <span class="string">'junkan'</span></span><br><span class="line">new_name = name.startswith(<span class="string">'j'</span>)</span><br><span class="line"><span class="keyword">if</span> new_name:</span><br><span class="line">    print(<span class="string">'是以j开头'</span>)</span><br><span class="line"><span class="comment"># 判断这是不是字符串是不是以j开头的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 以什么结尾</span></span><br><span class="line">name = <span class="string">'junkan'</span></span><br><span class="line">new_name = name.endswith(<span class="string">'n'</span>)</span><br><span class="line"><span class="keyword">if</span> new_name:</span><br><span class="line">    print(<span class="string">'是以n结尾'</span>)</span><br><span class="line"><span class="comment"># 判断这是不是字符串是不是以n结尾的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 统计出现的次数</span></span><br><span class="line">name = <span class="string">'junkan'</span></span><br><span class="line">new_name = name.count(<span class="string">'n'</span>)</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 统计name这个字符串中n出现的次数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找下标</span></span><br><span class="line">name = <span class="string">'junkan'</span></span><br><span class="line">new_name = name.find(<span class="string">'u'</span>)</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 通过元素查找下标,不存在就返回-1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除头尾两边的空格</span></span><br><span class="line">name = <span class="string">' junkan '</span></span><br><span class="line">new_name = name.strip()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 去除头尾俩遍的空格和换行符</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字符串格式化</span></span><br><span class="line">name = <span class="string">'junkan&#123;&#125;'</span></span><br><span class="line">new_name = name.format(<span class="string">'说的对'</span>)</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 字符串格式化</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断是不是阿拉伯数字,返回的是布尔值</span></span><br><span class="line">name = <span class="string">'junkan'</span></span><br><span class="line">new_name = name.isdigit()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 判断是不是阿拉伯数字,</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断是不是数字和字母,返回的是布尔值</span></span><br><span class="line">name = <span class="string">'junkan7dasx'</span></span><br><span class="line">new_name = name.isalnum()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 判断是不是字母和数字,返回结果是布尔值</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断是不是纯字母和汉字,返回的是布尔值</span></span><br><span class="line">name = <span class="string">'junkandasx'</span></span><br><span class="line">new_name = name.isalpha()</span><br><span class="line">print(new_name)</span><br><span class="line"><span class="comment"># 判断是不是纯字母和汉字,返回的是布尔值</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -557,7 +618,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/robot-framework/" <i class="fa fa-tag"></i> robot framework</a>
+            <a href="/tags/python%E5%9F%BA%E7%A1%80/" <i class="fa fa-tag"></i> python基础</a>
           
         </div>
       
@@ -570,8 +631,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/26/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify/" rel="next" title="RF中常见关键字的用法之Builtln-Verify">
-                <i class="fa fa-chevron-left"></i> RF中常见关键字的用法之Builtln-Verify
+              <a href="/2019/12/04/python%E4%B8%AD%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3/" rel="next" title="python中字典操作以及相关">
+                <i class="fa fa-chevron-left"></i> python中字典操作以及相关
               </a>
             
           </div>
@@ -579,10 +640,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/03/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Control/" rel="prev" title="RF中常见关键字的用法之Builtln-Control">
-                RF中常见关键字的用法之Builtln-Control <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
