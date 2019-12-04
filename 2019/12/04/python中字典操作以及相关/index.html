@@ -90,7 +90,7 @@
 
 
 
-  <meta name="keywords" content="robot framework," />
+  <meta name="keywords" content="python基础," />
 
 
 
@@ -101,15 +101,15 @@
 
 
 
-<meta name="description" content="本文阅读说明: 1.代码调试工具为VScode，python版本为python3，robot framework版本为3.1.1，如有涉及到3.1.1版本之后的内容会特别声明备注。 2.由于RF框架中Builtln-Verify中很多关键字的使用方法一样，只要了解一个的使用方法就能了解类似其他的，例如：should_be_true&#x2F;should_not_be_true，should_be_equa">
-<meta name="keywords" content="robot framework">
+<meta name="description" content="一.什么是字典 ​        字典是“键值对”的无序可变序列，字典中的每个元素都是一个“键值对”，包含:“键对象”和“值对象”。可以通过“键对象”实现快速获取、删除、更新对应的“值对象”。 列表中我们通过“下标数字”找到对应的对象。字典中通过“键对象”找到对应的“值对象”。“键”是任意的不可变数据(也就是我们所说的可hash的)，比如:整数、浮点数、字符串、元组。但是，列表、字典、集合这些可变">
+<meta name="keywords" content="python基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RF中常见关键字的用法之Builtln-Verify">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.cpmuyi.com&#x2F;2019&#x2F;11&#x2F;26&#x2F;RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify&#x2F;index.html">
+<meta property="og:title" content="python中字典操作以及相关">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.cpmuyi.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;python%E4%B8%AD%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3&#x2F;index.html">
 <meta property="og:site_name" content="chenjunkan Blog">
-<meta property="og:description" content="本文阅读说明: 1.代码调试工具为VScode，python版本为python3，robot framework版本为3.1.1，如有涉及到3.1.1版本之后的内容会特别声明备注。 2.由于RF框架中Builtln-Verify中很多关键字的使用方法一样，只要了解一个的使用方法就能了解类似其他的，例如：should_be_true&#x2F;should_not_be_true，should_be_equa">
+<meta property="og:description" content="一.什么是字典 ​        字典是“键值对”的无序可变序列，字典中的每个元素都是一个“键值对”，包含:“键对象”和“值对象”。可以通过“键对象”实现快速获取、删除、更新对应的“值对象”。 列表中我们通过“下标数字”找到对应的对象。字典中通过“键对象”找到对应的“值对象”。“键”是任意的不可变数据(也就是我们所说的可hash的)，比如:整数、浮点数、字符串、元组。但是，列表、字典、集合这些可变">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-27T14:29:51.624Z">
+<meta property="og:updated_time" content="2019-12-04T08:27:08.728Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="https://www.cpmuyi.com/2019/11/26/RF中常见关键字的用法之Builtln-Verify/"/>
+  <link rel="canonical" href="https://www.cpmuyi.com/2019/12/04/python中字典操作以及相关/"/>
 
 
 
@@ -156,7 +156,7 @@
   </script>
 
 
-  <title>RF中常见关键字的用法之Builtln-Verify | chenjunkan Blog</title>
+  <title>python中字典操作以及相关 | chenjunkan Blog</title>
   
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.cpmuyi.com/2019/11/26/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify/">
+    <link itemprop="mainEntityOfPage" href="https://www.cpmuyi.com/2019/12/04/python%E4%B8%AD%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chenjunkan">
@@ -344,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">RF中常见关键字的用法之Builtln-Verify</h1>
+          <h1 class="post-title" itemprop="name headline">python中字典操作以及相关</h1>
         
 
         <div class="post-meta">
@@ -356,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-26T11:21:39+08:00">
-                2019-11-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T14:17:05+08:00">
+                2019-12-04
               </time>
             
 
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-11-27T22:29:51+08:00">
-                2019-11-27
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-04T16:27:08+08:00">
+                2019-12-04
               </time>
             
           </span>
@@ -391,8 +391,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/robot-framework%E6%95%99%E7%A8%8B/" itemprop="url" rel="index">
-                    <span itemprop="name">robot framework教程</span>
+                  <a href="/categories/python%E6%95%99%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">python教程</span>
                   </a>
                 </span>
 
@@ -408,7 +408,7 @@
 
           
           
-             <span id="/2019/11/26/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Verify/" class="leancloud_visitors" data-flag-title="RF中常见关键字的用法之Builtln-Verify">
+             <span id="/2019/12/04/python%E4%B8%AD%E5%AD%97%E5%85%B8%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E7%9B%B8%E5%85%B3/" class="leancloud_visitors" data-flag-title="python中字典操作以及相关">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -433,7 +433,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.1k
+                  2k
                 </span>
               
 
@@ -449,7 +449,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  8
                 </span>
               
             </div>
@@ -471,71 +471,74 @@
       
 
       
-        <p>本文阅读说明:</p>
-<p>1.代码调试工具为VScode，python版本为python3，robot framework版本为3.1.1，如有涉及到3.1.1版本之后的内容会特别声明备注。</p>
-<p>2.由于RF框架中Builtln-Verify中很多关键字的使用方法一样，只要了解一个的使用方法就能了解类似其他的，例如：should_be_true/should_not_be_true，should_be_equal/should_not_be_equal，等等，因此由于篇幅有限，只说明其中部分常用的关键字。</p>
-<p>(1).should_be_true(self, condition, msg=None)</p>
-<p>定义:如果给定条件(condition)不成立,则失败。</p>
-<p>condition:给定判断的条件</p>
-<p>msg:校验失败之后的消息打印，默认为None</p>
-<p>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># 单个条件比较大小校验-pass</span><br><span class="line">$&#123;rc&#125;                  Set Variable         $&#123;5&#125;</span><br><span class="line">Should Be True         $&#123;rc&#125; &lt; 10</span><br><span class="line"></span><br><span class="line"># 单个条件比较大小校验-fail</span><br><span class="line">$&#123;rc&#125;                  Set Variable         $&#123;11&#125;</span><br><span class="line">Should Be True         $&#123;rc&#125; &lt; 10</span><br><span class="line"># 打印结果:FAIL : &apos;11 &lt; 10&apos; should be true.</span><br><span class="line"></span><br><span class="line"># 单个条件相等校验-pass</span><br><span class="line">$&#123;status&#125;              Set Variable                  PASS</span><br><span class="line">Should Be True         &apos;$&#123;status&#125;&apos; == &apos;PASS&apos;</span><br><span class="line">注意:字符串进行比较的时候需要加引号,如果不加引号的话就会报错,打印结果: FAIL : Evaluating expression &apos;PASS == PASS&apos; failed: NameError: name &apos;PASS&apos; is not defined</span><br><span class="line"></span><br><span class="line"># 数字类型校验</span><br><span class="line">$&#123;number1&#125;             Set Variable         1</span><br><span class="line">$&#123;number2&#125;             Set Variable         -1</span><br><span class="line">$&#123;number3&#125;             Set Variable         0</span><br><span class="line">Should Be True         $&#123;number1&#125; # pass</span><br><span class="line">Should Be True         $&#123;number2&#125; # pass</span><br><span class="line">Should Be True         $&#123;number3&#125; # fail</span><br><span class="line">注意:只有条件不为0的情况下才是通过的，如果判断的条件为0，那么报错。打印结果:FAIL : &apos;0&apos; should be true</span><br><span class="line"></span><br><span class="line"># 容器数据类型list校验-pass</span><br><span class="line">$&#123;list&#125;                Create List         1         2         3</span><br><span class="line">Should Be True         $&#123;list&#125;</span><br><span class="line"></span><br><span class="line"># 容器数据类型校验-fail</span><br><span class="line">$&#123;list&#125;                Create List</span><br><span class="line">Should Be True         $&#123;list&#125;</span><br><span class="line">注意:只有list不为空的情况下才能校验通过，如果list为空报错，打印结果: FAIL : &apos;[]&apos; should be true，字典也是一样</span><br><span class="line"></span><br><span class="line"># msg消息打印</span><br><span class="line">$&#123;rc&#125;                  Set Variable         $&#123;12&#125;</span><br><span class="line">Should Be True         $&#123;rc&#125; &lt; 10           message=校验通过</span><br><span class="line"># 打印结果:FAIL : message=校验通过</span><br></pre></td></tr></table></figure>
+        <p>一.什么是字典</p>
+<p>​        字典是“键值对”的无序可变序列，字典中的每个元素都是一个“键值对”，包含:“键对象”和“值对象”。可以通过“键对象”实现快速获取、删除、更新对应的“值对象”。 列表中我们通过“下标数字”找到对应的对象。字典中通过“键对象”找到对应的“值对象”。“键”是任意的不可变数据(也就是我们所说的可hash的)，比如:整数、浮点数、字符串、元组。但是，列表、字典、集合这些可变对象(也就是我们所说的不可hash的)，不能作为“键”。并且“键”不可重复， “值”可以是任意的数据，并且可重复。</p>
+<p>基本语法:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">语法:&#123;<span class="string">'key1'</span>:<span class="number">1</span>,<span class="string">'key2'</span>:<span class="number">2</span>&#125;</span><br></pre></td></tr></table></figure>
 
-<p>(2).should_be_equal(self, first, second, msg=None, values=True,ignore_case=False)</p>
-<p>定义:如果给定对象不相等，则失败。</p>
-<p>first:第一个对象</p>
-<p>second:第二个对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出，则错误消息为first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second，如果values为false则打印错误消息格式为msg</p>
-<p>ignore_case:是否忽略大小写，默认不忽略</p>
-<p>注意:在RF3.1.2中版本中新增了formatter =’str’这个参数，控制如何格式化值，默认为str，在我们这个3.1.1版本中暂时不展示</p>
-<p>举例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 没有msg信息 -pass</span><br><span class="line">$&#123;a&#125;                    Create List         1            2         3</span><br><span class="line">$&#123;b&#125;                    Create List         1            2         3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;</span><br><span class="line"># 没有msg信息 -fail</span><br><span class="line">$&#123;a&#125;                    Create List         1            2         3</span><br><span class="line">$&#123;b&#125;                    Create List         1            4         3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;</span><br><span class="line"># 打印结果: FAIL : [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;] != [&apos;1&apos;, &apos;4&apos;, &apos;3&apos;]</span><br><span class="line"></span><br><span class="line"># 自定义msg -fail</span><br><span class="line">$&#123;a&#125;                    Create List         1            2                      3</span><br><span class="line">$&#123;b&#125;                    Create List         1            4                      3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;         测试失败</span><br><span class="line"># 打印结果: 测试失败: [&apos;1&apos;, &apos;2&apos;, &apos;3&apos;] != [&apos;1&apos;, &apos;4&apos;, &apos;3&apos;]</span><br><span class="line"></span><br><span class="line"># 自定义msg和values，且values为布尔类型False</span><br><span class="line">$&#123;a&#125;                    Create List         1            2                      3</span><br><span class="line">$&#123;b&#125;                    Create List         1            4                      3</span><br><span class="line">Should Be Equal         $&#123;a&#125;                $&#123;b&#125;         测试失败         False</span><br><span class="line"># 打印结果:FAIL : 测试失败</span><br><span class="line"></span><br><span class="line"># ignore_case默认不忽略大小写 -fail</span><br><span class="line">$&#123;a&#125;                    Set Variable         abc</span><br><span class="line">$&#123;b&#125;                    Set Variable         Abc</span><br><span class="line">Should Be Equal         $&#123;a&#125;                 $&#123;b&#125;</span><br><span class="line"># 打印结果:abc != Abc</span><br><span class="line"></span><br><span class="line"># ignore_case忽略大小写 -pass</span><br><span class="line">$&#123;a&#125;                    Set Variable         abc</span><br><span class="line">$&#123;b&#125;                    Set Variable         Abc</span><br><span class="line">Should Be Equal         $&#123;a&#125;                 $&#123;b&#125;         忽略大小写         True       True</span><br></pre></td></tr></table></figure>
+<p>注意: key必须是不可变(可哈希)的. value没有要求.可以保存任意类型的数据</p>
+<p>一个典型的字典的定义方式:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>:<span class="string">'junkan'</span>,<span class="string">'age'</span>:<span class="number">18</span>,<span class="string">'job'</span>:<span class="string">'IT'</span>&#125;</span><br></pre></td></tr></table></figure>
 
-<p>(3).should_be_equal_as_integers(self,first, second, msg=None, values=True,base=None)</p>
-<p>定义:将对象转换为整数后，如果对象不相等则失败。</p>
-<p>first:第一个对象</p>
-<p>second:第二个对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出,则错误消息为。first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second,如果values为false则打印错误消息格式为msg</p>
-<p>base:默认情况下应为以10为底的整数,可以修改转换的基数</p>
-<p>举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 没有msg -pass</span><br><span class="line">$&#123;a&#125;                                Set Variable         42</span><br><span class="line">$&#123;b&#125;                                Set Variable         $&#123;42&#125;</span><br><span class="line">Should Be Equal As Integers         $&#123;a&#125;                 $&#123;b&#125;</span><br><span class="line"></span><br><span class="line"># 有msg -fail</span><br><span class="line">$&#123;a&#125;                                Set Variable         42</span><br><span class="line">$&#123;b&#125;                                Set Variable         $&#123;43&#125;</span><br><span class="line">Should Be Equal As Integers         $&#123;a&#125;                 $&#123;b&#125;          message=转换失败</span><br><span class="line"># 打印结果: FAIL : message=转换失败: 42 != 43</span><br><span class="line"></span><br><span class="line"># 转换为16进制比较</span><br><span class="line">Should Be Equal As Integers         ABCD         abcd         base=16</span><br><span class="line"></span><br><span class="line"># 转换为默认的10进制比较</span><br><span class="line">Should Be Equal As Integers         0b1011         11</span><br></pre></td></tr></table></figure>
+<p>二:字典中的相关操作</p>
+<p>1.字典的创建</p>
+<p>(1).在python中我们可以通过{}，dict()来创建字典对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过赋值的形式创建一个字典</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"><span class="comment"># 将列表中的元祖转换为字典</span></span><br><span class="line">b = dict([(<span class="string">"name"</span>, <span class="string">"junkan"</span>), (<span class="string">"age"</span>, <span class="number">18</span>)])</span><br><span class="line"><span class="comment"># 创建空的字典</span></span><br><span class="line">c = &#123;&#125;  <span class="comment"># 空的字典对象</span></span><br><span class="line">d = dict()  <span class="comment"># 空的字典对象</span></span><br><span class="line"></span><br><span class="line">print(a) <span class="comment"># &#123;'name': 'junkan', 'age': 18, 'job': 'programmer'&#125;</span></span><br><span class="line">print(b) <span class="comment"># &#123;'name': 'junkan', 'age': 18&#125;</span></span><br><span class="line">print(c) <span class="comment"># &#123;&#125;</span></span><br><span class="line">print(d) <span class="comment"># &#123;&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(4).should_be_equal_as_numbers(self, first, second, msg=None, values=True,precision=6)</p>
-<p>定义:将对象转换为实数后，如果对象不相等则失败。</p>
-<p>irst:第一个对象</p>
-<p>second:第二个对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出,则错误消息为。first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second,如果values为false则打印错误消息格式为msg</p>
-<p>precision:浮点数的四舍五入，保留小数点后面几位，默认保留小数点后面6位，忽略精度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 默认保留6位 -pass</span><br><span class="line">$&#123;a&#125;                               Set Variable         1.1</span><br><span class="line">Should Be Equal As Numbers         $&#123;a&#125;                 1.1</span><br><span class="line"></span><br><span class="line"># 保留小数点后面1位 -pass</span><br><span class="line">Should Be Equal As Numbers         1.123         1.1         precision=1</span><br><span class="line"># 保留小数点后面1位 -fail</span><br><span class="line">Should Be Equal As Numbers         1.223         1.1         precision=1</span><br><span class="line"># 打印结果: FAIL : 1.2 != 1.1</span><br><span class="line"></span><br><span class="line"># 保留整数位 -pass</span><br><span class="line">Should Be Equal As Numbers         1.223         1.4         precision=0</span><br><span class="line"># 保留整数位 -fail</span><br><span class="line">Should Be Equal As Numbers         2.223         1.4         precision=0</span><br><span class="line"># 打印结果: FAIL : 2.0 != 1.0</span><br></pre></td></tr></table></figure>
+<p>(2).通过 zip()创建字典对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">k = [<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'job'</span>]</span><br><span class="line">v = [<span class="string">'junkan'</span>, <span class="number">18</span>, <span class="string">'IT'</span>]</span><br><span class="line">d = dict(zip(k, v))</span><br><span class="line"></span><br><span class="line">print(d) <span class="comment"># &#123;'name': 'junkan', 'age': 18, 'job': 'IT'&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(5).should_contain(self, container, item, msg=None, values=True,ignore_case=False)</p>
-<p>定义:如果container不包含item一次或多次，则失败。适用于字符串，列表以及任何支持Python in 运算符的操作。</p>
-<p>container:包含对象</p>
-<p>item:被包含对象</p>
-<p>msg:校验失败打印的消息，默认为None，如果msg未给出,则错误消息为。first != second</p>
-<p>values:如果values为true则打印错误消息格式为msg:first != second，如果values为false则打印错误消息格式为msg</p>
-<p>ignore_case:是否忽略大小写，默认不忽略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># container包含item -pass</span><br><span class="line">$&#123;output&#125;              Set Variable         PASS12334</span><br><span class="line">Should Contain         $&#123;output&#125;            PASS</span><br><span class="line"># container不包含item -fail</span><br><span class="line">$&#123;output&#125;              Set Variable         PAS12334</span><br><span class="line">Should Contain         $&#123;output&#125;            PASS</span><br><span class="line"># 打印结果:FAIL : &apos;PAS12334&apos; does not contain &apos;PASS&apos;</span><br><span class="line"></span><br><span class="line"># 容器对象包含子对象</span><br><span class="line">$&#123;list&#125;                Create List         123         456                  789</span><br><span class="line">Should Contain         $&#123;list&#125;             456         msg=Failure!         values=False</span><br><span class="line"></span><br><span class="line"># 容器对象不包含子对象</span><br><span class="line">$&#123;list&#125;                Create List         123         456                  789</span><br><span class="line">Should Contain         $&#123;list&#125;             45          msg=Failure!         values=False</span><br><span class="line"># 打印结果: FAIL : Failure!</span><br><span class="line"></span><br><span class="line"># 容器对象包含子对象忽略大小写</span><br><span class="line">$&#123;list&#125;                Create List         ValuE         456                      789</span><br><span class="line">Should Contain         $&#123;list&#125;             value         ignore_case=True</span><br></pre></td></tr></table></figure>
+<p>(3).通过 fromkeys 创建值为空的字典</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">a = dict.fromkeys([<span class="string">'name'</span>, <span class="string">'age'</span>, <span class="string">'job'</span>])</span><br><span class="line"></span><br><span class="line">print(a) <span class="comment"># &#123;'name': None, 'age': None, 'job': None&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典的坑:</span></span><br><span class="line">dic = &#123;&#125;</span><br><span class="line">dic1 = dic.fromkeys([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>], [<span class="string">'你好'</span>])</span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment"># 结果  &#123;'a': ['你好'], 'b': ['你好'], 'c': ['你好']&#125;</span></span><br><span class="line"><span class="comment"># 注意:fromkeys里第一个参数是可迭代的对象,里边的每个元素就是字典中的健,第二个参数就是值现在创建的字典中后边的值用的是同一个</span></span><br><span class="line"></span><br><span class="line">dic1[<span class="string">'a'</span>].append(<span class="string">'我好'</span>)</span><br><span class="line">print(dic1)</span><br><span class="line"><span class="comment"># 结果 &#123;'a': ['你好', '我好'], 'b': ['你好', '我好'], 'c': ['你好', '我好']&#125;</span></span><br><span class="line"><span class="comment"># 注意:通过上述的内容我们发现这些值其实用的都是同一个东西,只有值是可变数据类型的时候才会出现坑,使用时请慎重</span></span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(6).should_contain_any(self, container, <em>items, *</em>configuration)</p>
-<p>定义:如果container只要包含其中任何一个就成功，相当于or，只有 *items全部都不满足才失败</p>
-<p>container:包含对象</p>
-<p>*items:可变数量的子对象</p>
-<p>**configuration:msg，values，ignore_case类型的配置</p>
-<p>注意:这个方法是Robot Framework 3.0.1中的新增功能</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># *items全部不包含 -fail</span><br><span class="line">$&#123;string&#125;                  Set Variable         ValuE</span><br><span class="line">Should Contain Any         $&#123;string&#125;            x             y         z</span><br><span class="line"># 打印结果:FAIL : &apos;ValuE&apos; does not contain any of &apos;x&apos;, &apos;y&apos; or &apos;z&apos;</span><br><span class="line"></span><br><span class="line"># *items全部包含其中一个 -pass</span><br><span class="line">$&#123;string&#125;                  Set Variable         ValuE</span><br><span class="line">Should Contain Any         $&#123;string&#125;            x             y         u</span><br></pre></td></tr></table></figure>
+<p>2.字典中元素的常见访问形式</p>
+<p>为了测试各种访问方法，我们这里设定一个字典对象: </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br></pre></td></tr></table></figure>
 
-<p>说明:msg=None, values=True用法同上方法should_be_equal</p>
-<p>(7).get_length(self, item)</p>
-<p>定义:返回并以整数形式记录给定item的长度,该item可以是任何具有长度的内容，例如字符串，列表或字典。关键字首先尝试使用Python函数获取长度，该函数len在’<strong>len</strong>‘内部调用该item的方法。如果失败，则关键字尝试直接调用该item的length和size方法。最后的尝试是尝试获取item的length属性的值。如果所有这些尝试均未成功，则关键字失败。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 计算字符串的长度</span><br><span class="line">$&#123;length&#125;   Get Length    Hello, world!      </span><br><span class="line">Should Be Equal As Integers   $&#123;length&#125;     13  </span><br><span class="line"></span><br><span class="line"># 计算list的长度</span><br><span class="line">@&#123;list&#125;     Create List   Hello,        world! </span><br><span class="line">$&#123;length&#125;    Get Length   $&#123;list&#125;     </span><br><span class="line">Should Be Equal As Integers   $&#123;length&#125;      2</span><br></pre></td></tr></table></figure>
+<p>注意:dict保存的数据不是按照我们添加进去的顺序保存的，是按照hash表的顺序保存的，⽽hash表不是连续的， 所以不能进⾏切片⼯作. 它只能通过key来获取dict中的数据</p>
+<p>(1).通过”键”获得“值”，若键不存在，则抛出异常 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 通过"键"获得“值”</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(a[<span class="string">'name'</span>]) <span class="comment"># junkan</span></span><br><span class="line">print(a[<span class="string">'age'</span>])  <span class="comment"># 18</span></span><br><span class="line">print(a[<span class="string">'job'</span>])  <span class="comment"># programmer</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过"键"获得“值”，键不存在，则抛出异常</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(a[<span class="string">'junkan'</span>]) <span class="comment"># KeyError: 'junkan'</span></span><br></pre></td></tr></table></figure>
 
+<p>(2).通过get()方法获得“值”，优点是:指定键不存在，返回None;也可以设定指定键不存在时默认返回的对象，不会出现报错的情况。推荐使用get()获取“值对象” </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定的键存在</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(a.get(<span class="string">'name'</span>)) <span class="comment"># junkan</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定的键不存在时，指定默认的返回值</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(a.get(<span class="string">'haha'</span>, <span class="string">'没有该key'</span>)) <span class="comment"># 没有该key</span></span><br></pre></td></tr></table></figure>
+
+<p>(3).列出所有的键值对</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"><span class="comment"># 一个高仿列表,存放是多个元祖,元祖中第一个是字典中的键,第二个是字典中的值</span></span><br><span class="line"></span><br><span class="line">print(a.items())</span><br><span class="line"><span class="comment"># dict_items([('name', 'junkan'), ('age', 18), ('job', 'programmer')])</span></span><br></pre></td></tr></table></figure>
+
+<p>(4).列出所有的键，列出所有的值 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(a.keys()) <span class="comment"># dict_keys(['name', 'age', 'job'])</span></span><br><span class="line"><span class="comment"># 一个高仿列表,存放的都是字典中的key</span></span><br><span class="line"></span><br><span class="line">print(a.values()) <span class="comment"># dict_values(['junkan', 18, 'programmer'])</span></span><br><span class="line"><span class="comment"># 一个高仿列表,存放都是字典中的value</span></span><br></pre></td></tr></table></figure>
+
+<p>(5).len()方法统计键值对的个数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(len(a)) <span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+
+<p>(6).检测一个“键”是否在字典中 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">print(<span class="string">"name"</span> <span class="keyword">in</span> a) <span class="comment"># True</span></span><br></pre></td></tr></table></figure>
+
+<p>3.字典元素的添加，修改，删除</p>
+<p>(1).给字典新增“键值对”，如果“键”已经存在，则覆盖旧的键值对;如果“键”不存在，则新增“键值对” </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 键不存在，新增</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">a[<span class="string">'address'</span>] = <span class="string">'hangzhou'</span></span><br><span class="line"></span><br><span class="line">print(a) <span class="comment"># &#123;'name': 'junkan', 'age': 18, 'job': 'programmer', 'address': 'hangzhou'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 键存在，新值覆盖旧的值</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">a[<span class="string">'name'</span>] = <span class="string">'hangzhou'</span></span><br><span class="line"></span><br><span class="line">print(a) <span class="comment"># &#123;'name': 'hangzhou', 'age': 18, 'job': 'programmer'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果dict中没有出现过这个key-value. 可以通过setdefault设置默认值</span></span><br><span class="line">dic = &#123;&#125;</span><br><span class="line">s1 = dic.setdefault(<span class="string">'junkan'</span>)</span><br><span class="line">print(s1) <span class="comment"># None</span></span><br><span class="line">print(dic) <span class="comment"># 返回的是添加进去的值:&#123;'junkan': None&#125;， </span></span><br><span class="line"><span class="comment"># 总结: 当setdefault中第一个参数存在这个字典中就就不进行添加操作,否则就添加</span></span><br></pre></td></tr></table></figure>
+
+<p>(2).可以使用update()将新字典中所有键值对全部添加到旧字典对象上。如果 key 有重复，则直接覆盖 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line">b = &#123;<span class="string">'name'</span>: <span class="string">'hangzhou'</span>, <span class="string">'money'</span>: <span class="number">1000</span>, <span class="string">'sex'</span>: <span class="string">'男的'</span>&#125;</span><br><span class="line">a.update(b)</span><br><span class="line">print(a) </span><br><span class="line"><span class="comment"># &#123;'name': 'hangzhou', 'age': 18, 'job': 'programmer', 'money': 1000, 'sex': '男的'&#125;</span></span><br><span class="line"><span class="comment"># 注意:当update中的字典里没有dic中键值对就添加到dic字典中,如果有就修改里边的对应的值</span></span><br></pre></td></tr></table></figure>
+
+<p>(3).字典中元素的删除，可以使用del方法，或者clear()删除所有键值对；pop()删除指定键值对，并返回对应的“值对象” </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># del删除元素</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> a[<span class="string">'name'</span>]</span><br><span class="line"></span><br><span class="line">print(a) <span class="comment"># &#123;'age': 18, 'job': 'programmer'&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># clear()清空所有元素</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">a.clear()</span><br><span class="line"></span><br><span class="line">print(a) <span class="comment"># &#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># pop删除有返回值,返回的是被删的值</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">b = a.pop(<span class="string">'age'</span>)</span><br><span class="line"></span><br><span class="line">print(a) <span class="comment"># &#123;'name': 'junkan', 'job': 'programmer'&#125;</span></span><br><span class="line">print(b) <span class="comment"># 18</span></span><br></pre></td></tr></table></figure>
+
+<p>(4).popitem() :随机删除和返回该键值对。字典是“无序可变序列”，因此没有第一个元素和最后一个元素的概念，若想一个接一个地移除并处理项，这个方法就非常有效(因为不用首先获取键的列表)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line"></span><br><span class="line">b = a.popitem()</span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">&#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>&#125;</span><br><span class="line">(<span class="string">'job'</span>, <span class="string">'programmer'</span>)</span><br><span class="line"></span><br><span class="line">b = a.popitem()</span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">&#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>&#125;</span><br><span class="line">(<span class="string">'age'</span>, <span class="number">18</span>)</span><br><span class="line"></span><br><span class="line">b = a.popitem()</span><br><span class="line">print(a)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印结果</span></span><br><span class="line">&#123;&#125;</span><br><span class="line">(<span class="string">'name'</span>, <span class="string">'junkan'</span>)</span><br><span class="line"><span class="comment"># 注意:python3.6是删除最后一个</span></span><br></pre></td></tr></table></figure>
+
+<p>4.字典的序列解包</p>
+<p>序列解包可以用于元组、列表、字典。序列解包可以让我们方便的对多个变量赋值。 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用于元祖</span></span><br><span class="line">x, y, z = (<span class="number">20</span>, <span class="number">30</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">print(x) <span class="comment"># 20</span></span><br><span class="line">print(y) <span class="comment"># 30</span></span><br><span class="line">print(z) <span class="comment"># 10</span></span><br></pre></td></tr></table></figure>
+
+<p>序列解包用于字典时，默认是对“键”进行操作; 如果需要对键值对操作，则需要使用items();如果需要对“值”进行操作，则需要使用values() </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># items()</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line">name, age, job = a.items()</span><br><span class="line">print(name)</span><br><span class="line">print(age)</span><br><span class="line">print(job)</span><br><span class="line"></span><br><span class="line"><span class="comment"># values() </span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line">name, age, job = a.values()</span><br><span class="line">print(name)</span><br><span class="line">print(age)</span><br><span class="line">print(job)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认是key</span></span><br><span class="line">a = &#123;<span class="string">'name'</span>: <span class="string">'junkan'</span>, <span class="string">'age'</span>: <span class="number">18</span>, <span class="string">'job'</span>: <span class="string">'programmer'</span>&#125;</span><br><span class="line">name, age, job = a</span><br><span class="line">print(name)</span><br><span class="line">print(age)</span><br><span class="line">print(job)</span><br></pre></td></tr></table></figure>
+
+<p>三:个人总结</p>
+<p>字典(dict)是python中唯⼀的⼀个映射类型.他是以{ }括起来的键值对组成.</p>
+<p>在dict中key是 唯⼀的.在保存的时候, 根据key来计算出⼀个内存地址. 然后将key-value保存在这个地址中，这种算法被称为hash算法, 所以, 切记, 在dict中存储的key-value中的key必须是可hash的, 如果你搞不懂什么是可哈希, 暂时可以这样记,</p>
+<p>可以改变的都是不可哈希的, 那么可哈希就意味着不可变. 这个是为了能准确的计算内存地址⽽规定的.</p>
+<p>已知的可哈希(不可变)的数据类型: int, str, tuple, bool 不可哈希(可变)的数据类型: list, dict, set</p>
 
       
     </div>
@@ -587,7 +590,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/robot-framework/" <i class="fa fa-tag"></i> robot framework</a>
+            <a href="/tags/python%E5%9F%BA%E7%A1%80/" <i class="fa fa-tag"></i> python基础</a>
           
         </div>
       
@@ -600,15 +603,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/12/03/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Control/" rel="next" title="RF中常见关键字的用法之Builtln-Control">
+                <i class="fa fa-chevron-left"></i> RF中常见关键字的用法之Builtln-Control
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/11/27/RF%E4%B8%AD%E5%B8%B8%E8%A7%81%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E7%94%A8%E6%B3%95%E4%B9%8BBuiltln-Converter/" rel="prev" title="RF中常见关键字的用法之Builtln-Converter">
-                RF中常见关键字的用法之Builtln-Converter <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
